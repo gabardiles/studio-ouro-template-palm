@@ -47,7 +47,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const radius =
-    radiusMap[client.brand.radius ?? "soft"] ?? radiusMap.soft;
+    radiusMap[(client.brand.radius as keyof typeof radiusMap) ?? "soft"] ?? radiusMap.soft;
   const titleFont = client.brand.titleFont ?? "Funnel Display";
   const bodyFont = client.brand.bodyFont ?? "Funnel Sans";
   const mode = (client.brand.mode ?? "light") as "light" | "dark";
