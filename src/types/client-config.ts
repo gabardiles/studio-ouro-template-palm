@@ -13,6 +13,12 @@ export interface Highlight {
   description: string;
 }
 
+export interface Reference {
+  title: string;
+  description: string;
+  image?: string | null;
+}
+
 export interface Service {
   title: string;
   description: string;
@@ -92,7 +98,7 @@ export interface ClientConfig {
   };
   services: Service[];
   usps: Usp[];
-  references: unknown[];
+  references: Reference[];
   reviews: {
     score: number | null;
     count: string;
