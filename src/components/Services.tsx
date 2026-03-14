@@ -55,7 +55,7 @@ export function Services() {
                 )}
                 {/* Icon badge in top-left corner */}
                 <div className="absolute top-3 left-3 flex h-10 w-10 items-center justify-center rounded-md bg-white/90 text-zinc-700 shadow-sm backdrop-blur-sm">
-                  <ServiceIcon name={service.icon} />
+                  <ServiceIcon name={service.icon ?? ''} />
                 </div>
               </div>
 
