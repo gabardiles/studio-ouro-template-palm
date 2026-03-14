@@ -54,6 +54,7 @@ export type ColorMode = "light" | "dark";
 
 export interface ClientConfig {
   pages: string[];
+  skills?: string[] | null;
   meta: {
     title: string;
     description: string;
