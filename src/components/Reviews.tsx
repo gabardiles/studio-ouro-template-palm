@@ -36,7 +36,7 @@ export function Reviews() {
   ) : null;
 
   return (
-    <section className="bg-[var(--section-alt)] py-16 sm:py-20">
+    <section className="bg-zinc-100 py-16 sm:py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         {scoreBanner && (client.reviews.url ? (
           <a

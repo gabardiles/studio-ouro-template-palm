@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowLeft, Phone } from "lucide-react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { FloatingWidgets } from "./FloatingWidgets";
 import { client } from "../../client.config";
 import { getPrimaryCtaHref } from "@/lib/cta";
 
@@ -99,6 +100,7 @@ export function SubpageLayout({
         </section>
       </main>
       <Footer />
+      <FloatingWidgets />
     </>
   );
 }
