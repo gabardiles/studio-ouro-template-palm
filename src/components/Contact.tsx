@@ -119,7 +119,10 @@ export function Contact() {
 
               {hasValue(client.contact.emergency) && (
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[var(--accent-light)] text-[var(--accent)]">
+                  <div
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-[var(--accent)]"
+                    style={{ backgroundColor: `${client.brand.accentColor}1a` }}
+                  >
                     <BellRing className="h-5 w-5" />
                   </div>
                   <div>
