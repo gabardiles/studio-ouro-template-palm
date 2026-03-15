@@ -6,6 +6,9 @@ import type { ClientConfig } from "./src/types/client-config";
 
 export const client: ClientConfig = {
 
+  pages: ["om-oss"],
+  chatbot: false,
+
   meta: {
     title: "Härryda VVS — Badrum & VVS-tjänster i Härryda",
     description: "Lokalt VVS-företag i Härryda sedan 2009. Vi renoverar badrum, installerar värmepumpar och rycker ut akut. Svar inom 2 timmar. ROT-godkänt. Alltid rättvisa priser.",
@@ -50,7 +53,7 @@ export const client: ClientConfig = {
     body: "Härryda VVS grundades 2009 och drivs av en ägare som också är projektledare — med fyra familjemedlemmar i teamet. Vi är inte ett anonymt bolag. Vi är dina grannar, och vi behandlar varje uppdrag som om det vore vårt eget hem.",
     secondaryBody: "Vi ser oss som en partner, inte bara en leverantör. Det innebär att vi ger dig ärliga råd, håller vad vi lovar och aldrig skickar en faktura du inte förstår.",
     founded: "2009",
-    teamSize: "8",
+    teamSize: 8,
     stats: [
       { value: "15+", label: "ÅRS ERFARENHET" },
       { value: "120", label: "NÖJDA GOOGLE-RECENSIONER" },
@@ -243,7 +246,7 @@ export const client: ClientConfig = {
   ],
 
   reviews: {
-    score: "4.5",
+    score: 4.5,
     count: "120",
     platform: "Google",
     url: null,
@@ -316,8 +319,8 @@ export const client: ClientConfig = {
       city: "Härryda",
       region: "Västra Götalands län",
       country: "SE",
-      lat: "57.6574",
-      lng: "12.2261",
+      lat: 57.6574,
+      lng: 12.2261,
     },
     serviceArea: [
       "Härryda",
@@ -349,4 +352,3 @@ export const client: ClientConfig = {
 
 } as const;
 
-export type ClientConfig = typeof client;
