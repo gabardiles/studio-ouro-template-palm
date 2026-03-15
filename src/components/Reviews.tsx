@@ -36,7 +36,7 @@ export function Reviews() {
   ) : null;
 
   return (
-    <section className="bg-[var(--section-alt)] py-16 sm:py-20">
+    <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         {scoreBanner && (client.reviews.url ? (
           <a
@@ -56,7 +56,7 @@ export function Reviews() {
             {testimonials.map((t) => (
               <blockquote
                 key={t.name}
-                className="relative rounded-lg border border-zinc-200 bg-white p-6"
+                className="relative rounded-lg bg-zinc-100 p-6"
               >
                 <Quote className="mb-3 h-5 w-5 text-zinc-400" />
                 <p className="leading-relaxed text-zinc-600">
