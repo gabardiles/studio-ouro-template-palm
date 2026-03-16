@@ -6,7 +6,8 @@ import type { ClientConfig } from "./src/types/client-config";
 
 export const client: ClientConfig = {
 
-  pages: ["om-oss"],
+  pages: ["om-oss", "before-after", "locations", "blog"],
+  skills: ["quote-flow", "rot-rut", "chatbot"],
   chatbot: false,
 
   meta: {
@@ -295,12 +296,43 @@ export const client: ClientConfig = {
   contact: {
     phone: "031-123 45 67",
     email: "info@harrydavvs.se",
+    leadsEmail: "leads@harrydavvs.se",
     address: "Exempelgatan 1, 433 00 Härryda",
     hours: "Mån–Fre 08:00–17:00, Lör 09:00–13:00",
     emergency: "Vid akuta VVS-ärenden — ring oss direkt. Vi svarar inom 2 timmar.",
-    // Map: set to a full Google Maps embed URL to override. Else map is derived from seo.geo (lat/lng) — scraped data maps here.
     mapUrl: null,
     formEnabled: true,
+    leadFormUrl: null,
+  },
+
+  quoteFlow: {
+    enabled: true,
+    responseTime: "2 timmar",
+    buttonLabel: "Få en offert",
+  },
+
+  beforeAfter: {
+    headline: "Före & efter",
+    intro: "Se exempel på hur vi förvandlar badrum, rör och värmesystem — från gammalt och slitet till nytt och fräscht.",
+    items: [
+      { title: "Badrum från 70-tal till 2024", description: "Fullständig renovering av ett 70-talsbadrum i Härryda. Ny kakling, golvvärme, duschvägg och hela rörsystemet byttes ut.", category: "Badrum" },
+      { title: "Bergvärme ersätter direktel", description: "Villa i Mölnlycke gick från direktel till bergvärme. Energikostnad halverades första vintern.", category: "Värmepump" },
+      { title: "Akut läcka åtgärdad", description: "Vattenläcka under köksgolvet identifierad och åtgärdad på en dag. Kunden slapp vattenskada.", category: "Akut VVS" },
+      { title: "Badrum i flerbostadshus", description: "12 badrum renoverade simultant i höghus. Hela projektet klart inom 6 veckor.", category: "Badrum" },
+      { title: "Frånluftsvärmepump, radhus", description: "Radhus i Partille fick frånluftsvärmepump installerad. 40% lägre energiräkning.", category: "Värmepump" },
+    ],
+  },
+
+  locations: {
+    headline: "Områden vi servar",
+    intro: "Vi utför VVS-arbeten i Härryda och hela kranskommunerna. Klicka på en stad för att läsa mer.",
+    items: [
+      { city: "Härryda", description: "Härryda VVS är baserade i Härryda och utför alla typer av VVS-arbeten i kommunen — från akuta utryckningar till stora renoveringsprojekt.", seo_title: "VVS i Härryda — Lokalt företag sedan 2009" },
+      { city: "Mölnlycke", description: "Vi utför regelbundna VVS-uppdrag i Mölnlycke, inklusive badrumsrenoveringar och bergvärmeinstallationer i Skinnefjäll.", seo_title: "VVS i Mölnlycke — Behöriga installatörer" },
+      { city: "Partille", description: "Snabb service och fasta priser för VVS-arbeten i Partille. Vi svarar alltid inom 2 timmar.", seo_title: "VVS i Partille — Svar inom 2 timmar" },
+      { city: "Mölndal", description: "Certifierade VVS-installatörer i Mölndal. ROT-godkänt företag med lång erfarenhet.", seo_title: "VVS i Mölndal — ROT-godkänt företag" },
+      { city: "Lerum", description: "Vi servar villor och fastigheter i Lerum med allt från rörbyten till kompletta värmepumpsinstallationer.", seo_title: "VVS i Lerum — Lokala VVS-proffs" },
+    ],
   },
 
   social: {

@@ -34,6 +34,7 @@ export function QuoteFlow({
   buttonLabel,
   responseTime,
   leadFormUrl,
+  forceOpen = false,
 }: {
   services: string[];
   accentColor: string;
@@ -41,8 +42,10 @@ export function QuoteFlow({
   buttonLabel?: string | null;
   responseTime?: string | null;
   leadFormUrl?: string | null;
+  /** Dev preview: skip scroll trigger and open modal immediately */
+  forceOpen?: boolean;
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(forceOpen);
   const [step, setStep] = useState<Step>(1);
   const [form, setForm] = useState<FormData>({
     service: "",
@@ -55,13 +58,14 @@ export function QuoteFlow({
   const [submitting, setSubmitting] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  // Show button after 300px scroll
+  // Show button after 300px scroll (skipped in forceOpen/preview mode)
   useEffect(() => {
+    if (forceOpen) { setVisible(true); return; }
     const onScroll = () => setVisible(window.scrollY > 300);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [forceOpen]);
 
   // Lock body scroll when modal open
   useEffect(() => {

@@ -9,8 +9,8 @@
 import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 
-export function ChatbotWidget({ accentColor }: { accentColor: string }) {
-  const [open, setOpen] = useState(false);
+export function ChatbotWidget({ accentColor, forceOpen = false }: { accentColor: string; forceOpen?: boolean }) {
+  const [open, setOpen] = useState(forceOpen);
 
   return (
     <div className="flex flex-col items-end gap-3">
