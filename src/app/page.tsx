@@ -15,6 +15,7 @@ import { Trust } from "@/components/Trust";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { FloatingWidgets } from "@/components/FloatingWidgets";
+
 export default function Home() {
   return (
     <>
@@ -22,7 +23,7 @@ export default function Home() {
       <main>
         <Hero />       {/* id="hem" */}
         <About />      {/* id="om-oss" */}
-        <Services />   {/* id="tjanster" — includes ROT/RUT calculator when skill is active */}
+        <Services />   {/* id="tjanster" — includes ROT block when skill is active */}
         <USPs />
         <References /> {/* id="referencer" */}
         <FAQ />        {/* id="faq" */}
@@ -35,3 +36,4 @@ export default function Home() {
     </>
   );
 }
+

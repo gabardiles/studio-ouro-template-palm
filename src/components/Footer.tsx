@@ -7,13 +7,22 @@ import Link from "next/link";
 import { Facebook, Instagram } from "lucide-react";
 import { client } from "../../client.config";
 
-const navItems = [
+const baseNavItems = [
   { label: "Tjänster", href: "/#tjanster" },
   { label: "Om oss", href: "/om-oss" },
-  { label: "Referenser", href: "/#referenser" },
+  { label: "Referenser", href: "/#referencer" },
   { label: "FAQ", href: "/#faq" },
   { label: "Kontakt", href: "/#kontakt" },
 ];
+
+const navItems = client.pages.includes("before-after")
+  ? [
+      baseNavItems[0],
+      baseNavItems[1],
+      { label: "Före & efter", href: "/fore-efter" },
+      ...baseNavItems.slice(2),
+    ]
+  : baseNavItems;
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -107,3 +116,4 @@ export function Footer() {
     </footer>
   );
 }
+
