@@ -22,6 +22,8 @@ const serviceLinks = client.services.map((s) => ({
   href: `/tjanster/${s.slug}`,
 }));
 
+const showBeforeAfter = client.pages.includes("before-after");
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -102,7 +104,6 @@ export function Header() {
 
             {servicesOpen && (
               <div className="absolute left-1/2 top-full mt-3 w-60 -translate-x-1/2 rounded-lg border border-zinc-100 bg-white p-2 shadow-xl">
-                {/* Anchor to services section on homepage */}
                 <Link
                   href="/#tjanster"
                   className="block rounded-md px-3 py-2.5 text-sm font-semibold text-zinc-900 transition-colors hover:bg-zinc-50"
@@ -134,6 +135,14 @@ export function Header() {
           >
             Om oss
           </Link>
+          {showBeforeAfter && (
+            <Link
+              href="/fore-efter"
+              className="text-[15px] font-medium text-zinc-500 transition-colors hover:text-zinc-900"
+            >
+              Före &amp; efter
+            </Link>
+          )}
           <Link
             href="/#referenser"
             className="text-[15px] font-medium text-zinc-500 transition-colors hover:text-zinc-900"
@@ -227,6 +236,15 @@ export function Header() {
             >
               Om oss
             </Link>
+            {showBeforeAfter && (
+              <Link
+                href="/fore-efter"
+                className="rounded-md px-3 py-3 text-[15px] font-medium text-zinc-700 transition-colors hover:bg-zinc-50"
+                onClick={() => setOpen(false)}
+              >
+                Före &amp; efter
+              </Link>
+            )}
             <Link
               href="/#referenser"
               className="rounded-md px-3 py-3 text-[15px] font-medium text-zinc-700 transition-colors hover:bg-zinc-50"
@@ -271,3 +289,4 @@ export function Header() {
     </header>
   );
 }
+
