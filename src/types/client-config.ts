@@ -51,8 +51,15 @@ export interface Usp {
 
 export interface BeforeAfterItem {
   title: string;
-  description: string;
   category: string;
+  /** City or area where the job was done — empty string if unknown */
+  location: string;
+  /** How long the job took, e.g. "9 dagar" — empty string if unknown */
+  duration: string;
+  /** The problem / starting state before the job */
+  before: string;
+  /** What was done and the result */
+  after: string;
 }
 
 export interface LocationItem {
