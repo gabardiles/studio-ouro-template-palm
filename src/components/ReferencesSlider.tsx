@@ -79,10 +79,10 @@ export function ReferencesSlider({
           <article
             key={ref.title}
             data-ref-card
-            className="group flex-shrink-0 w-[85vw] min-w-[280px] max-w-[380px] overflow-hidden rounded-lg border border-zinc-100 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg snap-start sm:flex-1 sm:w-full"
+            className="group flex-shrink-0 w-[85vw] min-w-[280px] max-w-[380px] overflow-hidden rounded-lg border border-zinc-100 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg snap-start dark:border-zinc-800 dark:bg-zinc-900 sm:flex-1 sm:w-full"
           >
             {ref.image ? (
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100 dark:bg-zinc-800">
                 <Image
                   src={ref.image}
                   alt={ref.title}
@@ -105,8 +105,8 @@ export function ReferencesSlider({
               </div>
             )}
             <div className="p-6">
-              <h3 className="text-lg font-medium text-zinc-900">{ref.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-600">{ref.description}</p>
+              <h3 className="text-lg font-medium text-zinc-900 dark:text-white">{ref.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">{ref.description}</p>
             </div>
           </article>
         ))}

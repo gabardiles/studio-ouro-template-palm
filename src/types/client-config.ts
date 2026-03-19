@@ -18,6 +18,7 @@ export interface Reference {
   description: string;
   image?: string | null;
   images?: string[] | null;
+  imageCaptions?: string[] | null;
 }
 
 export interface Service {
@@ -66,6 +67,17 @@ export interface LocationItem {
   city: string;
   description: string;
   seo_title: string;
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  category: string;
+  readingTime: string;
+  intro: string;
+  sections: Section[];
 }
 
 export type RadiusKey = "none" | "subtle" | "rounded" | "soft" | "pill";
@@ -193,5 +205,11 @@ export interface ClientConfig {
     headline: string;
     intro: string;
     items: LocationItem[];
+  } | null;
+
+  blog?: {
+    headline: string;
+    intro: string;
+    posts: BlogPost[];
   } | null;
 }

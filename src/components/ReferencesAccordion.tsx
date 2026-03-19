@@ -16,6 +16,7 @@ type RefItem = {
   description: string;
   image?: string | null;
   images?: string[] | null;
+  imageCaptions?: string[] | null;
 };
 
 /** Normalise single image / images array into one list */
@@ -59,7 +60,7 @@ export function ReferencesAccordion({
             <div
               key={ref.title}
               role="listitem"
-              className="border-b border-zinc-200 last:border-b-0"
+              className="border-b border-zinc-200 last:border-b-0 dark:border-zinc-700"
             >
               <button
                 type="button"
@@ -74,19 +75,14 @@ export function ReferencesAccordion({
                   aria-hidden
                 />
 
-                {/* Number */}
-                <span
-                  className="mt-0.5 shrink-0 text-[11px] font-bold uppercase tracking-[0.15em] transition-colors duration-300"
-                  style={{ color: isActive ? accentColor : "#a1a1aa" }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-
                 {/* Title + description */}
                 <div className="min-w-0 flex-1">
                   <p
-                    className="text-lg font-medium leading-snug transition-colors duration-300"
-                    style={{ color: isActive ? "#18181b" : "#52525b" }}
+                    className={`text-lg font-medium leading-snug transition-colors duration-300 ${
+                      isActive
+                        ? "text-zinc-900 dark:text-white"
+                        : "text-zinc-500 dark:text-zinc-400"
+                    }`}
                   >
                     {ref.title}
                   </p>
@@ -95,7 +91,7 @@ export function ReferencesAccordion({
                     className="overflow-hidden transition-all duration-500 ease-in-out"
                     style={{ maxHeight: isActive ? "300px" : "0px" }}
                   >
-                    <p className="mt-3 text-sm leading-relaxed text-zinc-500">
+                    <p className="mt-3 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
                       {ref.description}
                     </p>
                   </div>
@@ -169,9 +165,11 @@ export function ReferencesAccordion({
                 {/* Bottom gradient + caption */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50">
-                    {String(i + 1).padStart(2, "0")}&nbsp;/&nbsp;{String(references.length).padStart(2, "0")}
-                  </p>
+                  {ref.imageCaptions?.[isActiveRef ? imgIndex : 0] && (
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60">
+                      {ref.imageCaptions[isActiveRef ? imgIndex : 0]}
+                    </p>
+                  )}
                   <p className="mt-1.5 text-xl font-medium text-white leading-snug">
                     {ref.title}
                   </p>

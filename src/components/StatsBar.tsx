@@ -66,7 +66,7 @@ function StatCounter({ value, label }: Stat) {
       <p className="text-2xl font-medium text-[var(--primary)] sm:text-3xl">
         {parsed ? `${parsed.prefix}${display}${parsed.suffix}` : value}
       </p>
-      <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-zinc-600 sm:text-xs">
+      <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-zinc-600 dark:text-zinc-400 sm:text-xs">
         {label}
       </p>
     </div>
@@ -76,7 +76,7 @@ function StatCounter({ value, label }: Stat) {
 export function StatsBar({ stats }: { stats: readonly Stat[] }) {
   if (stats.length === 0) return null;
   return (
-    <div className="mt-14 flex flex-wrap items-center divide-x divide-zinc-200 rounded-lg border border-zinc-200 bg-white sm:flex-nowrap">
+    <div className="mt-14 flex flex-wrap items-center divide-x divide-zinc-200 rounded-lg border border-zinc-200 bg-white dark:divide-zinc-700 dark:border-zinc-700 dark:bg-zinc-900 sm:flex-nowrap">
       {stats.map((stat) => (
         <StatCounter key={stat.label} {...stat} />
       ))}

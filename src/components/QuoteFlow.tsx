@@ -137,7 +137,7 @@ export function QuoteFlow({
           />
 
           {/* Modal */}
-          <div className="relative z-10 w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl shadow-zinc-900/20">
+          <div className="relative z-10 w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl shadow-zinc-900/20 dark:bg-zinc-900">
             {/* Header */}
             <div
               className="flex items-center justify-between px-6 py-5"
@@ -171,8 +171,8 @@ export function QuoteFlow({
                 {[1, 2, 3, 4].map((s) => (
                   <div
                     key={s}
-                    className="h-1 flex-1 rounded-full transition-all duration-300"
-                    style={{ backgroundColor: (step as number) >= s ? accentColor : "#e4e4e7" }}
+                    className={`h-1 flex-1 rounded-full transition-all duration-300 ${(step as number) >= s ? "" : "bg-zinc-200 dark:bg-zinc-700"}`}
+                    style={(step as number) >= s ? { backgroundColor: accentColor } : undefined}
                   />
                 ))}
               </div>
@@ -189,11 +189,12 @@ export function QuoteFlow({
                       key={s}
                       type="button"
                       onClick={() => setForm((f) => ({ ...f, service: s }))}
-                      className="rounded-full border px-4 py-2 text-sm font-medium transition-all"
-                      style={form.service === s
-                        ? { backgroundColor: accentColor, borderColor: accentColor, color: "white" }
-                        : { borderColor: "#e4e4e7", color: "#3f3f46" }
-                      }
+                      className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+                        form.service === s
+                          ? "text-white"
+                          : "border-zinc-200 text-zinc-700 dark:border-zinc-700 dark:text-zinc-300"
+                      }`}
+                      style={form.service === s ? { backgroundColor: accentColor, borderColor: accentColor } : undefined}
                     >
                       {s}
                     </button>
@@ -204,7 +205,7 @@ export function QuoteFlow({
               {/* Step 2 – location */}
               {step === 2 && (
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-zinc-700" htmlFor="qf-location">
+                  <label className="mb-2 block text-sm font-medium text-zinc-700 dark:text-zinc-300" htmlFor="qf-location">
                     Stad eller postnummer
                   </label>
                   <input
@@ -214,7 +215,7 @@ export function QuoteFlow({
                     value={form.location}
                     onChange={(e) => setForm((f) => ({ ...f, location: e.target.value }))}
                     placeholder="t.ex. Göteborg eller 433 30"
-                    className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-transparent focus:outline-none focus:ring-2"
+                    className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-transparent focus:outline-none focus:ring-2 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500"
                     style={{ "--tw-ring-color": accentColor } as React.CSSProperties}
                     onKeyDown={(e) => e.key === "Enter" && canNext() && setStep(3)}
                   />
@@ -229,18 +230,18 @@ export function QuoteFlow({
                       key={opt}
                       type="button"
                       onClick={() => setForm((f) => ({ ...f, timing: opt }))}
-                      className="flex items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm font-medium transition-all"
-                      style={form.timing === opt
-                        ? { backgroundColor: `${accentColor}15`, borderColor: accentColor, color: "#18181b" }
-                        : { borderColor: "#e4e4e7", color: "#3f3f46" }
-                      }
+                      className={`flex items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm font-medium transition-all ${
+                        form.timing === opt
+                          ? "text-zinc-900 dark:text-white"
+                          : "border-zinc-200 text-zinc-700 dark:border-zinc-700 dark:text-zinc-300"
+                      }`}
+                      style={form.timing === opt ? { backgroundColor: `${accentColor}15`, borderColor: accentColor } : undefined}
                     >
                       <span
-                        className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-all"
-                        style={form.timing === opt
-                          ? { borderColor: accentColor, backgroundColor: accentColor }
-                          : { borderColor: "#d4d4d8" }
-                        }
+                        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-all ${
+                          form.timing === opt ? "" : "border-zinc-300 dark:border-zinc-600"
+                        }`}
+                        style={form.timing === opt ? { borderColor: accentColor, backgroundColor: accentColor } : undefined}
                       >
                         {form.timing === opt && <Check className="h-3 w-3 text-white" strokeWidth={3} />}
                       </span>
@@ -254,7 +255,7 @@ export function QuoteFlow({
               {step === 4 && (
                 <div className="flex flex-col gap-4">
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-zinc-700" htmlFor="qf-name">
+                    <label className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300" htmlFor="qf-name">
                       Namn <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -264,12 +265,12 @@ export function QuoteFlow({
                       value={form.name}
                       onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                       placeholder="Ditt namn"
-                      className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-transparent focus:outline-none focus:ring-2"
+                      className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-transparent focus:outline-none focus:ring-2 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500"
                       style={{ "--tw-ring-color": accentColor } as React.CSSProperties}
                     />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-zinc-700" htmlFor="qf-phone">
+                    <label className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300" htmlFor="qf-phone">
                       Telefon <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -278,13 +279,13 @@ export function QuoteFlow({
                       value={form.phone}
                       onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
                       placeholder="07X-XXX XX XX"
-                      className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-transparent focus:outline-none focus:ring-2"
+                      className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-transparent focus:outline-none focus:ring-2 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500"
                       style={{ "--tw-ring-color": accentColor } as React.CSSProperties}
                     />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-sm font-medium text-zinc-700" htmlFor="qf-message">
-                      Meddelande <span className="text-zinc-400 font-normal">(valfritt)</span>
+                    <label className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300" htmlFor="qf-message">
+                      Meddelande <span className="font-normal text-zinc-400">(valfritt)</span>
                     </label>
                     <textarea
                       id="qf-message"
@@ -292,7 +293,7 @@ export function QuoteFlow({
                       value={form.message}
                       onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                       placeholder="Berätta gärna mer om vad du behöver..."
-                      className="w-full resize-none rounded-lg border border-zinc-200 px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-transparent focus:outline-none focus:ring-2"
+                      className="w-full resize-none rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-transparent focus:outline-none focus:ring-2 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500"
                       style={{ "--tw-ring-color": accentColor } as React.CSSProperties}
                     />
                   </div>
@@ -308,10 +309,10 @@ export function QuoteFlow({
                   >
                     <Check className="h-8 w-8" style={{ color: accentColor }} strokeWidth={2.5} />
                   </div>
-                  <p className="text-base font-medium text-zinc-900">
+                  <p className="text-base font-medium text-zinc-900 dark:text-white">
                     Vi återkommer inom {responseTime || "2 timmar"}!
                   </p>
-                  <p className="mt-2 text-sm text-zinc-500">
+                  <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
                     Vi har tagit emot din förfrågan och hör av oss så snart som möjligt.
                   </p>
                   <button
@@ -328,12 +329,12 @@ export function QuoteFlow({
 
             {/* Footer nav */}
             {step !== "done" && (
-              <div className="flex items-center justify-between border-t border-zinc-100 px-6 py-4">
+              <div className="flex items-center justify-between border-t border-zinc-100 px-6 py-4 dark:border-zinc-800">
                 <button
                   type="button"
                   onClick={() => step > 1 && setStep((s) => (s as number) - 1 as Step)}
                   disabled={step === 1}
-                  className="flex items-center gap-1.5 text-sm font-medium text-zinc-500 transition hover:text-zinc-900 disabled:opacity-0"
+                  className="flex items-center gap-1.5 text-sm font-medium text-zinc-500 transition hover:text-zinc-900 disabled:opacity-0 dark:text-zinc-400 dark:hover:text-white"
                 >
                   <ArrowLeft className="h-4 w-4" /> Tillbaka
                 </button>

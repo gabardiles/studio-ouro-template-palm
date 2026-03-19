@@ -13,22 +13,22 @@ export function About() {
   const { about } = client;
 
   return (
-    <section id="om-oss" className="bg-[var(--section-alt)] py-20 sm:py-28">
+    <section id="om-oss" className="bg-[var(--section-alt)] py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Two-column: text + image */}
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <h2 className="mb-3 text-sm font-semibold uppercase tracking-widest text-zinc-700">
+            <h2 className="mb-3 text-sm font-semibold uppercase tracking-widest text-zinc-700 dark:text-zinc-400">
               Om oss
             </h2>
-            <h3 className="text-3xl font-medium leading-tight tracking-tight text-zinc-900 sm:text-4xl">
+            <h3 className="text-3xl font-medium leading-tight tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
               {about.title}
             </h3>
-            <p className="mt-5 text-lg leading-relaxed text-zinc-600">
+            <p className="mt-5 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
               {about.body}
             </p>
             {about.secondaryBody && (
-              <p className="mt-4 text-lg leading-relaxed text-zinc-600">
+              <p className="mt-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
                 {about.secondaryBody}
               </p>
             )}
@@ -43,7 +43,7 @@ export function About() {
 
           <div className="flex items-center justify-center">
             {about.image ? (
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-zinc-100 shadow-lg">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-zinc-100 shadow-lg dark:bg-zinc-800">
                 <Image
                   src={about.image}
                   alt={about.title}

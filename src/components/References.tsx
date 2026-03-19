@@ -11,12 +11,12 @@ export function References() {
   if (!client.references || client.references.length === 0) return null;
 
   return (
-    <section id="referenser" className="bg-[var(--section-alt)] py-20 sm:py-28">
+    <section id="referenser" className="bg-[var(--section-alt)] py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <p className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
+        <p className="text-sm font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
           Tidigare projekt
         </p>
-        <h3 className="mt-2 text-3xl font-medium tracking-tight text-zinc-900 sm:text-4xl">
+        <h3 className="mt-2 text-3xl font-medium tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
           Våra uppdrag
         </h3>
 

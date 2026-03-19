@@ -45,7 +45,7 @@ export const client: ClientConfig = {
         href: "#kontakt",
       },
     },
-    image: null,
+    image: "https://images.unsplash.com/photo-1744869524920-f0efc925b82f",
     badge: "Behöriga VVS-installatörer",
   },
 
@@ -61,7 +61,7 @@ export const client: ClientConfig = {
       { value: "4.5", label: "BETYG PÅ GOOGLE" },
       { value: "2h", label: "SVARSTID ALLTID" },
     ],
-    image: null,
+    image: "https://images.unsplash.com/photo-1662445407335-db6b4e68c323",
     slug: "om-oss",
     pageTitle: "Om oss — Härryda VVS",
     pageDescription: "Lär känna Härryda VVS — ett familjedrivet VVS-bolag sedan 2009 med lokal förankring i Härryda och kranskommunerna. Rättvisa priser och alltid svar inom 2 timmar.",
@@ -90,7 +90,7 @@ export const client: ClientConfig = {
       pageTitle: "Badrumsrenovering i Härryda",
       pageDescription: "Professionell badrumsrenovering i Härryda och kranskommunerna. Behöriga VVS-installatörer, ROT-avdrag och fast pris. Svar inom 2 timmar.",
       preamble: "Ett nytt badrum ska kännas tryggt från första mötet. Vi tar hand om hela processen, ger dig ett fast pris och ser till att slutresultatet håller hög kvalitet — utan överraskningar.",
-      heroImage: null,
+      heroImage: "https://images.unsplash.com/photo-1759223607861-f0ef3e617739",
       sections: [
         {
           heading: "Vad ingår i en badrumsrenovering?",
@@ -124,7 +124,7 @@ export const client: ClientConfig = {
       pageTitle: "Värmepumpsinstallation i Härryda",
       pageDescription: "Certifierad värmepumpsinstallation i Härryda. Vi installerade bergvärme för 50 fastigheter i Skinnefjäll. ROT-avdrag. Svar inom 2 timmar.",
       preamble: "Rätt värmepump kan halvera dina uppvärmningskostnader. Vi har installerat bergvärme i hela bostadsområden och vet vad som krävs för ett korrekt utfört jobb.",
-      heroImage: null,
+      heroImage: "https://images.unsplash.com/photo-1700124113583-81aa99ea2aa2",
       sections: [
         {
           heading: "Berg-, luft- eller frånluftsvärmepump?",
@@ -158,7 +158,7 @@ export const client: ClientConfig = {
       pageTitle: "Akut VVS i Härryda",
       pageDescription: "Akut VVS-hjälp i Härryda och kranskommunerna. Vi svarar inom 2 timmar. Behöriga installatörer. Inga dolda jourtillägg.",
       preamble: "En vattenläcka väntar inte. Vi heller inte. Ring oss och du får svar inom 2 timmar — dygnet runt gäller vid akuta situationer.",
-      heroImage: null,
+      heroImage: "https://images.unsplash.com/photo-1771122453274-d3270e73cf94",
       sections: [
         {
           heading: "Vanliga akuta VVS-situationer",
@@ -191,7 +191,7 @@ export const client: ClientConfig = {
       pageTitle: "Fastighetskötsel i Härryda",
       pageDescription: "Professionell fastighetskötsel i Härryda. Löpande VVS-underhåll för villor, bostadsrättsföreningar och kommuner. Lokalt och pålitligt sedan 2009.",
       preamble: "Förebygg problem innan de uppstår. Vi erbjuder löpande fastighetskötsel anpassad efter dina behov — från enstaka servicebesök till helårskavtal.",
-      heroImage: null,
+      heroImage: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15",
       sections: [
         {
           heading: "Vad ingår i fastighetsskötseln?",
@@ -237,12 +237,32 @@ export const client: ClientConfig = {
     {
       title: "Bergvärmeinstallation, Skinnefjäll i Mölnlycke",
       description: "Vi installerade bergvärme för samtliga 50 fastigheter i Skinnefjäll — ett storskaligt projekt som genomfördes i tid och utan störningar för de boende.",
-      image: null,
+      image: "https://images.unsplash.com/photo-1729183672500-46c52a897de5",
+      images: [
+        "https://images.unsplash.com/photo-1729183672500-46c52a897de5",
+        "https://images.unsplash.com/photo-1700124113583-81aa99ea2aa2",
+        "https://images.unsplash.com/photo-1613063457061-eecde6f4b20d",
+      ],
+      imageCaptions: [
+        "Utomhusenheter monterade på fasad",
+        "Luftvärmepump installerad på husvägg",
+        "Ny radiator kopplad till värmesystemet",
+      ],
     },
     {
       title: "12 badrumsrenoveringar, flerbostadshus i Härryda",
       description: "Komplett renovering av 12 badrum i ett höghus i Härryda — vi samordnade hela projektet och höll tidsplanen från start till slutbesiktning.",
-      image: null,
+      image: "https://images.unsplash.com/photo-1572742482459-e04d6cfdd6f3",
+      images: [
+        "https://images.unsplash.com/photo-1572742482459-e04d6cfdd6f3",
+        "https://images.unsplash.com/photo-1759223607861-f0ef3e617739",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a",
+      ],
+      imageCaptions: [
+        "Glasdusch med anpassade inredningsdetaljer",
+        "Komplett badrumsrenovering med marmorytor",
+        "Dubbla handfat med ny blandare och kakel",
+      ],
     },
   ],
 
@@ -415,6 +435,59 @@ export const client: ClientConfig = {
     localBusiness: true,
     faqPage: true,
     breadcrumb: false,
+  },
+
+  blog: {
+    headline: "Tips & råd från Härryda VVS",
+    intro: "Vi delar med oss av vår kunskap om värmepumpar, badrumsrenovering och VVS — så att du kan fatta välgrundade beslut för ditt hem.",
+    posts: [
+      {
+        slug: "varmepump-guide-villaagare",
+        title: "Värmepump 2025 — komplett guide för villaägare",
+        metaTitle: "Värmepump 2025 | Guide för villaägare | Härryda VVS",
+        metaDescription: "Allt du behöver veta om värmepumpar — vilken typ passar ditt hus, vad kostar installation och hur mycket sparar du egentligen på energiräkningen?",
+        category: "Värmepumpar",
+        readingTime: "6 min",
+        intro: "En värmepump är idag en av de mest lönsamma investeringarna du kan göra som villaägare. Men med så många alternativ på marknaden — bergvärme, luftvärmepump, luftvatten — är det lätt att gå vilse. Den här guiden reder ut vad som gäller 2025.",
+        sections: [
+          {
+            heading: "Vilken typ av värmepump passar ditt hus?",
+            body: "Det beror framförallt på husets storlek, ålder och befintligt värmesystem. Luftvärmepumpar är billigast att installera och passar villor upp till ca 150 kvm. Bergvärme är ett större ingrepp men ger lägst driftkostnad på sikt — räkna med att spara 50–70 % på uppvärmningskostnaden jämfört med direktverkande el. Luft-vatten-pumpar passar dig som redan har vattenburet system (golvvärme eller radiatorer) och vill behålla det.",
+          },
+          {
+            heading: "Vad kostar installation?",
+            body: "En luftvärmepump installeras normalt för 15 000–30 000 kr inklusive montering. Bergvärme landar vanligtvis på 120 000–200 000 kr, men ROT-avdraget täcker 30 % av arbetskostnaden. Med nuvarande elpriser brukar bergvärme betala sig på 8–12 år. Vi på Härryda VVS gör alltid en kostnadsfri besiktning och presenterar en tydlig kalkyl innan vi börjar.",
+          },
+          {
+            heading: "Vad händer efter installation?",
+            body: "En väl installerad värmepump kräver minimal skötsel. Vi rekommenderar ett serviceavtal med genomgång vartannat år — då kontrolleras köldmediet, filter rengörs och systemets effektivitet mäts. Med rätt underhåll håller en bergvärmepump 20–25 år.",
+          },
+        ],
+      },
+      {
+        slug: "badrumsrenovering-steg-for-steg",
+        title: "Badrumsrenovering steg för steg — vad du behöver veta",
+        metaTitle: "Badrumsrenovering Härryda | Steg för steg | Härryda VVS",
+        metaDescription: "Planerar du badrumsrenovering? Läs om hur processen går till, vad det kostar och hur du undviker de vanligaste misstagen.",
+        category: "Badrum",
+        readingTime: "5 min",
+        intro: "Ett badrumsrenoveringsprojekt är ett av de mest komplexa hantverksuppdragen i ett hem — det kräver koordinering av rörmokare, kakelläggare och elektriker. Här går vi igenom hur vi på Härryda VVS lägger upp ett renoveringsprojekt från ax till limpa.",
+        sections: [
+          {
+            heading: "Steg 1 — Besiktning och planering",
+            body: "Innan vi river något börjar vi alltid med en noggrann besiktning. Vi kontrollerar golvbrunn, befintliga rör, ventilation och väggkonstruktion. Fuktskador bakom kakel är vanligare än de flesta tror — att upptäcka dem tidigt sparar pengar och tid. Utifrån besiktningen tar vi fram ett fast pris med specifikation.",
+          },
+          {
+            heading: "Steg 2 — Rivning och tätskikt",
+            body: "Det gamla badrummet rivs ner till bjälklaget. Därefter appliceras ett certifierat tätskikt (vi använder Mapei eller Weber) enligt Säker Vatten-standarden. Tätskiktet är det viktigaste steget i hela renoveringen — det är det som skyddar resten av huset mot fukt i 20–30 år framåt.",
+          },
+          {
+            heading: "Steg 3 — Kakel, klinker och inredning",
+            body: "När tätskiktet är godkänt och torrt börjar kakelläggningen. Vi hjälper dig välja material och mönster om du vill — eller arbetar utifrån ditt eget val. Slutligen monteras toalett, dusch, tvättställ och tillbehör. Hela processen tar normalt 7–14 dagar beroende på badrumsyta.",
+          },
+        ],
+      },
+    ],
   },
 
 } as const;

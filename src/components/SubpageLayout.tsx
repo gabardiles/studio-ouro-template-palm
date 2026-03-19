@@ -14,9 +14,11 @@ import { getPrimaryCtaHref } from "@/lib/cta";
 export function SubpageLayout({
   children,
   backLabel = "Tillbaka",
+  backHref = "/",
 }: {
   children: React.ReactNode;
   backLabel?: string;
+  backHref?: string;
 }) {
   return (
     <>
@@ -25,8 +27,8 @@ export function SubpageLayout({
         {/* Back link */}
         <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
           <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
+            href={backHref}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
           >
             <ArrowLeft className="h-4 w-4" />
             {backLabel}
@@ -37,7 +39,7 @@ export function SubpageLayout({
 
         {/* CTA banner */}
         <section
-          className="relative overflow-hidden py-16 sm:py-20"
+          className="relative overflow-hidden py-14 sm:py-16"
           style={{ backgroundColor: client.brand.primaryColor }}
         >
           {/* Animated blobs */}

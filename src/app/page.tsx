@@ -24,8 +24,8 @@ export default function Home() {
         <Hero />       {/* id="hem" */}
         <About />      {/* id="om-oss" */}
         <Services />   {/* id="tjanster" — includes ROT block when skill is active */}
-        <USPs />
         <References /> {/* id="referencer" */}
+        <USPs />
         <FAQ />        {/* id="faq" */}
         <Reviews />
         <Trust />

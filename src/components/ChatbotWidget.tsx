@@ -15,7 +15,7 @@ export function ChatbotWidget({ accentColor, forceOpen = false }: { accentColor:
   return (
     <div className="flex flex-col items-end gap-3">
       {open && (
-        <div className="w-80 rounded-2xl border border-zinc-200 bg-white shadow-2xl shadow-zinc-900/15">
+        <div className="w-80 rounded-2xl border border-zinc-200 bg-white shadow-2xl shadow-zinc-900/15 dark:border-zinc-700 dark:bg-zinc-900">
           <div
             className="flex items-center justify-between rounded-t-2xl px-4 py-3"
             style={{ backgroundColor: accentColor }}
@@ -30,7 +30,7 @@ export function ChatbotWidget({ accentColor, forceOpen = false }: { accentColor:
               <X className="h-4 w-4" />
             </button>
           </div>
-          <div className="flex h-48 items-center justify-center p-6 text-center text-sm text-zinc-400">
+          <div className="flex h-48 items-center justify-center p-6 text-center text-sm text-zinc-400 dark:text-zinc-500">
             Chatten är snart tillgänglig.
           </div>
         </div>

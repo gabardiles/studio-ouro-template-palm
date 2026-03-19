@@ -25,11 +25,11 @@ export default function BeforeAfterPage() {
   return (
     <SubpageLayout backLabel="Tillbaka till startsidan">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <h1 className="text-3xl font-medium tracking-tight text-zinc-900 sm:text-4xl">
+        <h1 className="text-3xl font-medium tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
           {headline}
         </h1>
         {intro && (
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-zinc-600">
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
             {intro}
           </p>
         )}

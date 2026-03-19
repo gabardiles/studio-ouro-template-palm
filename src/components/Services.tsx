@@ -22,7 +22,7 @@ const ROT_BULLETS = [
 
 export function Services() {
   return (
-    <section id="tjanster" className="bg-zinc-100 py-14 sm:py-16">
+    <section id="tjanster" className="bg-zinc-100 py-14 dark:bg-zinc-900/30 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {client.services.length > 3 ? (
           /* Slider with its own left-aligned heading + arrows */
@@ -34,13 +34,13 @@ export function Services() {
         ) : (
           /* Standard centered heading + grid for 3 or fewer */
           <>
-          <h2 className="text-center text-sm font-semibold uppercase tracking-widest text-zinc-700">
+          <h2 className="text-center text-sm font-semibold uppercase tracking-widest text-zinc-700 dark:text-zinc-400">
             Vad vi erbjuder
           </h2>
-          <h3 className="mt-3 text-center text-3xl font-medium tracking-tight text-zinc-900 sm:text-4xl">
+          <h3 className="mt-3 text-center text-3xl font-medium tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
             Våra tjänster
           </h3>
-          <p className="mx-auto mt-4 max-w-xl text-center text-zinc-600">
+          <p className="mx-auto mt-4 max-w-xl text-center text-zinc-600 dark:text-zinc-400">
             Vi erbjuder ett brett utbud av tjänster för hem och fastighet.
           </p>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -48,7 +48,7 @@ export function Services() {
             <Link
               key={service.slug}
               href={`/tjanster/${service.slug}`}
-              className="group overflow-hidden rounded-lg border border-zinc-100 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+              className="group overflow-hidden rounded-lg border border-zinc-100 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900"
             >
               {/* Image / gradient area with icon overlay */}
               <div className="relative aspect-[16/10] w-full overflow-hidden">
@@ -81,13 +81,13 @@ export function Services() {
 
               {/* Text content */}
               <div className="p-6">
-                <h3 className="text-lg font-medium text-zinc-900">
+                <h3 className="text-lg font-medium text-zinc-900 dark:text-white">
                   {service.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                   {service.description}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-zinc-700 opacity-0 transition-opacity group-hover:opacity-100">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-zinc-700 opacity-0 transition-opacity group-hover:opacity-100 dark:text-zinc-200">
                   Läs mer <ArrowRight className="h-4 w-4" />
                 </span>
               </div>

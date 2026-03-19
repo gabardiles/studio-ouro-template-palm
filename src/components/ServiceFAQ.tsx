@@ -19,16 +19,16 @@ export function ServiceFAQ({ items }: { items: readonly FaqItem[] }) {
   if (items.length === 0) return null;
 
   return (
-    <section className="py-16 sm:py-24">
+    <section className="py-14 sm:py-16">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <h2 className="text-center text-sm font-semibold uppercase tracking-widest text-zinc-700">
+        <h2 className="text-center text-sm font-semibold uppercase tracking-widest text-zinc-700 dark:text-zinc-400">
           Vanliga funderingar
         </h2>
-        <h3 className="mt-3 text-center text-2xl font-medium tracking-tight text-zinc-900 sm:text-3xl">
+        <h3 className="mt-3 text-center text-2xl font-medium tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
           Vanliga frågor
         </h3>
 
-        <div className="mt-12 overflow-hidden rounded-lg border border-zinc-200 bg-white">
+        <div className="mt-12 overflow-hidden rounded-lg border border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900">
           {items.map((item, index) => {
             const isOpen = openIndex === index;
             const isLast = index === items.length - 1;
@@ -36,14 +36,14 @@ export function ServiceFAQ({ items }: { items: readonly FaqItem[] }) {
               <div key={item.question}>
                 <button
                   type="button"
-                  className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left text-[15px] font-medium text-zinc-900 transition-colors hover:text-zinc-700"
+                  className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left text-[15px] font-medium text-zinc-900 transition-colors hover:text-zinc-700 dark:text-white dark:hover:text-zinc-300"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
                 >
                   {item.question}
                   <span
                     className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors ${
-                      isOpen ? "bg-[var(--accent)] text-white" : "bg-zinc-100 text-zinc-500"
+                      isOpen ? "bg-[var(--accent)] text-white" : "bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400"
                     }`}
                   >
                     <ChevronDown
@@ -56,12 +56,12 @@ export function ServiceFAQ({ items }: { items: readonly FaqItem[] }) {
                   style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-6 pb-5 leading-relaxed text-zinc-600">
+                    <p className="px-6 pb-5 leading-relaxed text-zinc-600 dark:text-zinc-400">
                       {item.answer}
                     </p>
                   </div>
                 </div>
-                {!isLast && <div className="mx-6 border-t border-zinc-100" />}
+                {!isLast && <div className="mx-6 border-t border-zinc-100 dark:border-zinc-800" />}
               </div>
             );
           })}

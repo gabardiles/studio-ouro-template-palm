@@ -1,12 +1,22 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode for Tailwind v4 utility variants */
+@variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: var(--color-background, #ffffff);
-  --foreground: var(--color-text, #171717);
+  /* Light-mode defaults — overridden by [data-mode="dark"] / .dark below */
+  --color-background: #ffffff;
+  --color-text: #111111;
+  --color-surface: #f8f7f4;
+  --color-border: #e5e7eb;
+  --color-section-alt: #f8f8fa;
+
+  --background: var(--color-background);
+  --foreground: var(--color-text);
   --primary: var(--color-primary, #1a1a2e);
   --accent: var(--color-accent, #e63946);
   --accent-light: #fce8ea;
-  --section-alt: var(--color-section-alt, #f8f8fa);
+  --section-alt: var(--color-section-alt);
 }
 
 @theme inline {
@@ -37,15 +47,18 @@ h1, h2, h3, h4 {
   font-family: var(--font-display), sans-serif;
 }
 
-/* Dark mode overrides (when data-mode="dark" is set on html from client.brand.mode) */
-[data-mode="dark"] {
+/* Dark mode token overrides — triggered by data-mode attribute (SSR) or .dark class (client toggle) */
+[data-mode="dark"],
+.dark {
   --color-background: #0a0a0a;
   --color-text: #f0f0f0;
   --color-surface: #1a1a1a;
   --color-border: rgba(255, 255, 255, 0.1);
+  --color-section-alt: #111111;
+  --accent-light: rgba(255, 255, 255, 0.08);
 }
 
-[data-mode="light"] {
+[data-mode="light"]:not(.dark) {
   --color-surface: #f8f7f4;
   --color-border: #e5e7eb;
 }

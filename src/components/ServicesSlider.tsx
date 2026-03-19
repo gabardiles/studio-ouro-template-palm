@@ -75,10 +75,10 @@ export function ServicesSlider({
       {/* ── Header row: title left, arrows right ── */}
       <div className="flex items-end justify-between gap-6">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-widest text-zinc-700">
+          <p className="text-sm font-semibold uppercase tracking-widest text-zinc-700 dark:text-zinc-400">
             Vad vi erbjuder
           </p>
-          <h3 className="mt-2 text-3xl font-medium tracking-tight text-zinc-900 sm:text-4xl">
+          <h3 className="mt-2 text-3xl font-medium tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
             Våra tjänster
           </h3>
         </div>
@@ -93,7 +93,7 @@ export function ServicesSlider({
               onClick={prev}
               disabled={activeIndex === 0}
               aria-label="Föregående tjänst"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 transition-all hover:border-zinc-900 hover:text-zinc-900 disabled:opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 transition-all hover:border-zinc-900 hover:text-zinc-900 disabled:opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
             </button>
@@ -102,7 +102,7 @@ export function ServicesSlider({
               onClick={next}
               disabled={activeIndex === total - 1}
               aria-label="Nästa tjänst"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 transition-all hover:border-zinc-900 hover:text-zinc-900 disabled:opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 transition-all hover:border-zinc-900 hover:text-zinc-900 disabled:opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-white"
             >
               <ArrowRight className="h-4 w-4" />
             </button>
@@ -121,7 +121,7 @@ export function ServicesSlider({
               key={service.slug}
               data-service-card
               href={`/tjanster/${service.slug}`}
-              className="group w-[82vw] flex-none snap-start overflow-hidden rounded-lg border border-zinc-100 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg sm:w-[55vw] lg:w-[calc(33.333%-1rem)]"
+              className="group w-[82vw] flex-none snap-start overflow-hidden rounded-lg border border-zinc-100 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 sm:w-[55vw] lg:w-[calc(33.333%-1rem)]"
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 {service.heroImage ? (
@@ -148,9 +148,9 @@ export function ServicesSlider({
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-medium text-zinc-900">{service.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-600">{service.description}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-zinc-700 opacity-0 transition-opacity group-hover:opacity-100">
+                <h3 className="text-lg font-medium text-zinc-900 dark:text-white">{service.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">{service.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-zinc-700 opacity-0 transition-opacity group-hover:opacity-100 dark:text-zinc-200">
                   Läs mer <ArrowRight className="h-4 w-4" />
                 </span>
               </div>

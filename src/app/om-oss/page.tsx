@@ -22,10 +22,10 @@ export default function AboutPage() {
     <SubpageLayout backLabel="Startsida">
       <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
         {/* Hero area */}
-        <p className="text-sm font-semibold uppercase tracking-widest text-zinc-700">
+        <p className="text-sm font-semibold uppercase tracking-widest text-zinc-700 dark:text-zinc-400">
           Om oss
         </p>
-        <h1 className="mt-2 text-3xl font-medium tracking-tight text-zinc-900 sm:text-4xl">
+        <h1 className="mt-2 text-3xl font-medium tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
           {about.pageTitle}
         </h1>
       </article>
@@ -33,7 +33,7 @@ export default function AboutPage() {
       {/* Hero image – full container width */}
       <div className="mx-auto mt-8 max-w-6xl px-4 sm:px-6">
         {about.image ? (
-          <div className="relative aspect-[2/1] w-full overflow-hidden rounded-lg bg-zinc-100 shadow-lg">
+          <div className="relative aspect-[2/1] w-full overflow-hidden rounded-lg bg-zinc-100 shadow-lg dark:bg-zinc-800">
             <Image
               src={about.image}
               alt={about.pageTitle}
@@ -58,11 +58,11 @@ export default function AboutPage() {
 
       <article className="mx-auto max-w-4xl px-4 pt-12 pb-16 sm:px-6 sm:pt-16 sm:pb-20">
         {/* Intro */}
-        <p className="text-lg leading-relaxed text-zinc-600">
+        <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
           {about.body}
         </p>
         {about.secondaryBody && (
-          <p className="mt-4 text-lg leading-relaxed text-zinc-600">
+          <p className="mt-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
             {about.secondaryBody}
           </p>
         )}
@@ -74,10 +74,10 @@ export default function AboutPage() {
         <div className="mt-14 space-y-10">
           {about.sections.map((section) => (
             <div key={section.heading}>
-              <h2 className="text-xl font-medium text-zinc-900 sm:text-2xl">
+              <h2 className="text-xl font-medium text-zinc-900 dark:text-white sm:text-2xl">
                 {section.heading}
               </h2>
-              <p className="mt-3 leading-relaxed text-zinc-600">
+              <p className="mt-3 leading-relaxed text-zinc-600 dark:text-zinc-300">
                 {section.body}
               </p>
             </div>

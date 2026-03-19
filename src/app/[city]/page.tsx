@@ -44,13 +44,13 @@ export default async function CityPage({ params }: Props) {
   return (
     <SubpageLayout backLabel="Alla områden">
       <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
-        <p className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
+        <p className="text-sm font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
           {client.brand.name} i {loc.city}
         </p>
-        <h1 className="mt-3 text-3xl font-medium tracking-tight text-zinc-900 sm:text-4xl">
+        <h1 className="mt-3 text-3xl font-medium tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
           {loc.seo_title}
         </h1>
-        <p className="mt-6 text-lg leading-relaxed text-zinc-600">
+        <p className="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
           {loc.description}
         </p>
       </article>

@@ -140,7 +140,7 @@ export default async function ServicePage({ params }: Props) {
         type SectionWithOptionalImage = { heading: string; body: string; readonly image?: string | null };
         const sectionImage: string | null = (section as SectionWithOptionalImage)?.image ?? null;
         const imageBlock = sectionImage ? (
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-zinc-100 shadow-md">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-zinc-100 shadow-md dark:bg-zinc-800">
             <Image
               src={sectionImage}
               alt={section.heading}
@@ -154,10 +154,10 @@ export default async function ServicePage({ params }: Props) {
         );
         const textBlock = (
           <div className="flex flex-col justify-center">
-            <h2 className="text-2xl font-medium tracking-tight text-zinc-900 sm:text-3xl">
+            <h2 className="text-2xl font-medium tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
               {section.heading}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-zinc-600">
+            <p className="mt-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
               {section.body}
             </p>
           </div>
@@ -191,19 +191,19 @@ export default async function ServicePage({ params }: Props) {
       {service.highlights.length > 0 && (
         <section className="bg-[var(--section-alt)] py-16 sm:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <h2 className="text-center text-2xl font-medium tracking-tight text-zinc-900 sm:text-3xl">
+            <h2 className="text-center text-2xl font-medium tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
               Det här ingår
             </h2>
             <div className="mt-12 flex flex-wrap justify-center gap-6">
               {service.highlights.map((item) => (
                 <div
                   key={item.title}
-                  className="flex w-full gap-4 rounded-lg border border-zinc-100 bg-white p-6 shadow-sm sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                  className="flex w-full gap-4 rounded-lg border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                 >
                   <CheckCircle className="mt-0.5 h-6 w-6 shrink-0 text-[var(--accent)]" />
                   <div>
-                    <h3 className="font-medium text-zinc-900">{item.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-zinc-600">{item.description}</p>
+                    <h3 className="font-medium text-zinc-900 dark:text-white">{item.title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">{item.description}</p>
                   </div>
                 </div>
               ))}

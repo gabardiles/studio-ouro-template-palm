@@ -19,16 +19,16 @@ export function Reviews() {
         {[1, 2, 3, 4, 5].map((i) => (
           <Star
             key={i}
-            className={`h-5 w-5 ${i <= fullStars ? "fill-amber-400 text-amber-400" : "fill-zinc-200 text-zinc-200"}`}
+            className={`h-5 w-5 ${i <= fullStars ? "fill-amber-400 text-amber-400" : "fill-zinc-200 text-zinc-200 dark:fill-zinc-600 dark:text-zinc-600"}`}
           />
         ))}
       </div>
       <div className="text-center sm:text-left">
-        <p className="text-2xl font-bold text-zinc-900">
+        <p className="text-2xl font-bold text-zinc-900 dark:text-white">
           {score}
-          <span className="text-base font-normal text-zinc-600"> / 5</span>
+          <span className="text-base font-normal text-zinc-600 dark:text-zinc-400"> / 5</span>
         </p>
-        <p className="text-sm text-zinc-600">
+        <p className="text-sm text-zinc-600 dark:text-zinc-400">
           {count} omdömen på {client.reviews.platform}
         </p>
       </div>
@@ -36,7 +36,7 @@ export function Reviews() {
   ) : null;
 
   return (
-    <section className="bg-zinc-100 py-16 sm:py-20">
+    <section className="bg-zinc-100 py-14 dark:bg-zinc-800/50 sm:py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         {scoreBanner && (client.reviews.url ? (
           <a
@@ -56,13 +56,13 @@ export function Reviews() {
             {testimonials.map((t) => (
               <blockquote
                 key={t.name}
-                className="relative rounded-lg border border-zinc-200 bg-white p-6"
+                className="relative rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900"
               >
-                <Quote className="mb-3 h-5 w-5 text-zinc-400" />
-                <p className="leading-relaxed text-zinc-600">
+                <Quote className="mb-3 h-5 w-5 text-zinc-400 dark:text-zinc-500" />
+                <p className="leading-relaxed text-zinc-600 dark:text-zinc-300">
                   &ldquo;{t.text}&rdquo;
                 </p>
-                <footer className="mt-4 text-sm font-medium text-zinc-900">
+                <footer className="mt-4 text-sm font-medium text-zinc-900 dark:text-white">
                   — {t.name}
                 </footer>
               </blockquote>

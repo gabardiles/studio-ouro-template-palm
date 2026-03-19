@@ -70,11 +70,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 right-6 z-10 flex items-center gap-3 sm:right-10" aria-hidden="true">
-        <span className="h-px w-8 bg-white/30" />
-        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/40">Scroll</span>
-      </div>
     </section>
   );
 }

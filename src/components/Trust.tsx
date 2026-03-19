@@ -20,9 +20,9 @@ export function Trust() {
             trust.certifications.map((item) => (
               <span
                 key={item}
-                className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 shadow-sm"
+                className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200"
               >
-                <ShieldCheck className="h-4 w-4 text-zinc-600" />
+                <ShieldCheck className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
                 {item}
               </span>
             ))}
@@ -30,15 +30,15 @@ export function Trust() {
             trust.memberships.map((item) => (
               <span
                 key={item}
-                className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 shadow-sm"
+                className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200"
               >
-                <ShieldCheck className="h-4 w-4 text-zinc-600" />
+                <ShieldCheck className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
                 {item}
               </span>
             ))}
         </div>
         {trust.insurance && (
-          <p className="mt-5 text-center text-sm text-zinc-600">
+          <p className="mt-5 text-center text-sm text-zinc-600 dark:text-zinc-400">
             {trust.insurance}
           </p>
         )}
